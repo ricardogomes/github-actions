@@ -13,4 +13,4 @@ jobs:
       run: |
         docker-compose up -d
     - name: Run a one-line script
-      run: cd simple_node_app && npm run test
+      run: cd simple_node_app && npm run test:docker
