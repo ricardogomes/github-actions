@@ -7,9 +7,11 @@ const onRequest = (request, response) => {
 }
 
 const server = createServer(onRequest).listen(8080);
-console.log('Server has started');
-setTimeout(()=>{
-    server.close(()=>{
-        console.log('Server has stopped')
-    })
-},5000)
+console.log(`Server has started [ENV=${process.env.NODE_ENV}]`);
+if(process.env.NODE_ENV == 'development'){
+    setTimeout(()=>{
+        server.close(()=>{
+            console.log('Server has stopped')
+        })
+    },5000)
+}

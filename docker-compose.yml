@@ -1,0 +1,11 @@
+version: "3.6"
+services: 
+  simple_node_add: 
+    image: simple_node_app_image
+    build:
+      context: ./simple_node_app/
+      dockerfile: Dockerfile
+    container_name: webapp1
+    ports:
+      - "18080:8080"
+    
