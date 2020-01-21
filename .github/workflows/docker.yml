@@ -13,5 +13,9 @@ jobs:
       run:  docker-compose up -d
     - name: PS
       run:  docker-compose ps
-    - name: Run a one-line script
+    - name: Web Test via CURL
       run: cd simple_node_app && npm run test:docker
+    - name: Webhook
+      uses: joelwmale/webhook-action@master
+      env:
+        WEBHOOK_URL: 'http://localhost:18080'
