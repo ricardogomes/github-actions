@@ -15,3 +15,8 @@ jobs:
         node-version: 13.x
     - name: Run a one-line script
       run: cd simple_node_app && npm run test:dev
+    - name: Webhook
+      uses: joelwmale/webhook-action@master
+      env:
+        WEBHOOK_URL: 'http://localhost:8080'
+        data: "Testing"
