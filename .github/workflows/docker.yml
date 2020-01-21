@@ -1,0 +1,17 @@
+name: CI-Docker
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Docker-Compose
+      run:  docker-compose up -d
+    - name: PS
+      run:  docker-compose ps
+    - name: Run a one-line script
+      run: cd simple_node_app && npm run test:docker
